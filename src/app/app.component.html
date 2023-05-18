@@ -1,0 +1,28 @@
+<h1>Generate Random Numbers</h1>
+
+<div *ngIf="selectedNums.length > 0" else noSelection>
+  <span *ngFor="let n of selectedNums">{{ n }}, </span>
+</div>
+
+<div>
+  <button type="button" (click)="generateNums()">Regenerate</button>
+</div>
+
+<app-nums [value]=11></app-nums>
+
+<app-nums *ngFor="let n of values" [value]="n"
+  (onSelected)="valueSelected($event)">
+</app-nums>
+
+<ng-template #noSelection>
+  <h3>Please select your numbers</h3>
+</ng-template>
+
+<hr>
+<h1>Polar Bears</h1>
+<app-carousel title="List from Carousel component" [pictures]="pics">
+</app-carousel>
+
+<h2>List from array</h2>
+<app-pic-frame [image]="pics[0]" altText="polar bears yabadabadoo"></app-pic-frame>
+<app-pic-frame [image]="pics[1]"></app-pic-frame>
